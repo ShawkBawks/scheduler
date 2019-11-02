@@ -2,18 +2,8 @@ import React from "react";
 import InterviewerListItem from "components/InterviewerListItem.js"
 import 'components/InterviewerList.scss';
 
-// const classNames = require('classnames');
-
-
-
-
-
 export default function InterviewerList(props) {
-  // let InterviewerClass = classNames({
-  // 'interviewers__header': true,
-  // 'interviewers__list':props.selected
-  // });
-  console.log(props.interviewers)
+
   const InterviewerListRender = props.interviewers.map(interviewer => {
     return (
     <InterviewerListItem

@@ -2,20 +2,15 @@ import React from "react";
 
 
 export default function Show(props) {
-  const interviewer = {
-    id: 1,
-    name: "Sylvia Palmer",
-    avatar: "https://i.imgur.com/LpaY82x.png"
-  };
-  
+
 
 return(
 <main className="appointment__card appointment__card--show">
   <section className="appointment__card-left">
     <h2 className="text--regular">{props.student}</h2>
     <section className="interviewer">
-      <h4 className="text--light">{interviewer.name}</h4>
-      <h3 className="text--regular">Sylvia Palmer</h3>
+      <h4 className="text--light">interviewer</h4>
+      <h3 className="text--regular">{props.interviewer && props.interviewer.name}</h3>
     </section>
   </section>
   <section className="appointment__card-right">
@@ -24,13 +19,13 @@ return(
         className="appointment__actions-button"
         src="images/edit.png"
         alt="Edit"
-        onClick={props.onEdit}
+        onClick={()=> props.onEdit(props.id, props.appointment)}
       />
       <img
         className="appointment__actions-button"
         src="images/trash.png"
         alt="Delete"
-        onClick={props.onDelete}
+        onClick={() => props.onDelete(props.id, props.appointment)}
       />
     </section>
   </section>
