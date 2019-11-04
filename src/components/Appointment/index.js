@@ -58,7 +58,7 @@ function onEdit(){
   }
     
   // const interviewers = getInterviewersForDay(props, props.day);
-console.log(props)
+// console.log(props)
   return (
     <Fragment>
       <article className="appointment"></article>
