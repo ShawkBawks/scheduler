@@ -1,8 +1,7 @@
 import { useReducer, useEffect } from "react";
 import axios from "axios";
-import formatSpots from "components/DayListItem.js"
 import "components/Application.scss";
-
+//Reducer requirements
 import reducer, {
   SET_DAY,
   SET_APPLICATION_DATA,
@@ -12,7 +11,7 @@ import reducer, {
   SUB_SPOT
 } from "reducers/application";
 
-
+//Initial State Values
 const initialState = {
   day: "Monday",
   days: [],
@@ -20,9 +19,9 @@ const initialState = {
   interviewers: {}
 };
 export default function useApplicationData(props) {
-
+//useReducer variables
   let [state, dispatch] = useReducer(reducer, initialState)
-
+//Gathers data from DB to display
   useEffect(() => {
     Promise.all([
       axios.get('/api/days'),
@@ -39,8 +38,9 @@ export default function useApplicationData(props) {
       })
   }, []);
 
+  //Variable for SET_DAY action
   const setDay = day => dispatch({ type: SET_DAY, day })
-
+//Function for Booking Interviews
   function bookInterview(id, interview) {
 
     return axios.put(`api/appointments/${id}`, { interview })
@@ -51,9 +51,11 @@ export default function useApplicationData(props) {
           id, interview
         });
         dispatch({ type: SUB_SPOT, x });
-      
+
       })
   }
+
+  //Function for Cancelling an Interview
   function cancelInterview(id, interview) {
 
     return axios.delete(`api/appointments/${id}`, { interview })
