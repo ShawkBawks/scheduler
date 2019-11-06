@@ -46,11 +46,15 @@ export default function useApplicationData(props) {
     return axios.put(`api/appointments/${id}`, { interview })
       .then(() => {
         let x = state.day
+        if(state.appointments[id].interview===null){
+          dispatch({ type: SUB_SPOT, x });
+
+        }
         dispatch({
           type: SET_INTERVIEW,
           id, interview
         });
-        dispatch({ type: SUB_SPOT, x });
+       
 
       })
   }
