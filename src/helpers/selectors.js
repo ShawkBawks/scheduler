@@ -29,13 +29,10 @@ export function getInterviewersForDay(state, day) {
 
 export const getInterview = (state, interview) => {
   if (!interview){
-    // console.log('lolz')
     return null
   } else {
     let student = interview.student
-    // console.log(student)
     let interviewer = state.interviewers[interview.interviewer]
-    // console.log(interviewer)
     let obj = {student, interviewer}
     return obj
   }

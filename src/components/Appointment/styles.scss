@@ -12,9 +12,7 @@ $appointment-height: 11rem;
     display: flex;
     justify-content: center;
     align-items: center;
-  &:last-of-type{
-    display: none;
-  }
+ 
     &-button {
       @include button-inactive--opacity;
 
