@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+
+//Function for Displaying Proper Modes
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
