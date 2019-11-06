@@ -5,6 +5,7 @@ import DayListItem from "components/DayListItem.js"
 
 
 export default function DayList(props) {
+  //Day List Form
   const dayListRender = props.days.map(day => {
     return (<DayListItem 
   key={day.id}
