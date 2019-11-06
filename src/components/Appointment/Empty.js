@@ -1,6 +1,7 @@
 import React from "react";
-// import "components/Appointment/styles.scss"
 
+
+//Empty Card Element
 export default function Empty(props) {
   return (
     <main className="appointment__add">
