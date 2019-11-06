@@ -3,7 +3,7 @@ import "components/DayListItem.scss";
 
 const classNames = require('classnames');
 
-
+//Day List Item Forms
 export default function DayListItem(props) {
   let dayClass = classNames({
     "day-list__item": true,
@@ -38,26 +38,3 @@ export default function DayListItem(props) {
     </li>
   );
 }
-
-// Create an object called dayClass that applies the day-list__item--selected class
-//  name if props.selected is true and the day-list__item--full class name if props.spots is 0.
-
-
-// let buttonClass = classNames ("button",{
-//   "button--confirm": props.confirm,
-//   "button--danger": props.danger
-// });
-
-// return (<button
-// className={buttonClass}
-// onClick={props.onClick}
-// disabled={props.disabled}
-// >{props.children}</button>
-// );
-// }
-
-
-
-
-//lists use looping pattern
-// controlled input pattern for implementation for the appointment form
