@@ -2,7 +2,7 @@ import React from "react";
 import 'components/InterviewerListItem.scss';
 
 const classNames = require('classnames');
-
+//Interview List Item Form for InterviewList
 export default function InterviewerListItem(props) {
   let InterviewerClass = classNames({
   'interviewers__item': true,
