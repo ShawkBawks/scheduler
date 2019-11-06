@@ -10,6 +10,7 @@ import Error from "components/Appointment/Error.js"
 import useVisualMode from "hooks/useVisualMode.js"
 
 export default function Appointment(props) {
+  //Modes
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -20,9 +21,11 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
 
+  //Determines which Card Element to Show
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   )
+  //Save Function
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -35,14 +38,15 @@ export default function Appointment(props) {
       .catch(error => { transition(ERROR_SAVE, true) })
 
   }
+  //Delete Button Function
   function onDelete() {
     transition(CONFIRM)
   }
-
+  //Edit Button Function
   function onEdit() {
     transition(EDIT)
   }
-
+  //Delete Button Functionality Within the Confirm Card
   function cancel(name, interviewer) {
     const interview = {
       student: name,
@@ -56,7 +60,7 @@ export default function Appointment(props) {
 
   }
   return (
-
+    //Main Page Rendering
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && (<Empty onAdd={() => transition(CREATE)} />)}
