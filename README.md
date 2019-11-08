@@ -31,7 +31,7 @@ Allows Users To Cancel An Interview
 
 
 Highlighting Day Selection
-!["Highlighting Days"](/docs/Highlight-Day-Selection.png)
+!["Highlighting Days"](/scheduler/docs/Highlight-Day-Selection.png)
 
 Updates Spots Available
 !["Updated Spots"](/docs/Spots-Available.png)
